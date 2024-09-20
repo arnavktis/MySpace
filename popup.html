@@ -5,19 +5,52 @@
     <style>
       body {
         text-align: center;
-        width: 200px;
         padding: 20px;
+        background-color: #1c1c1c;
+        border-radius: 10%;
+      }
+      h2 {
+        margin-bottom: 10px;
+        color: #CEDF9F;
       }
       button {
-        padding: 10px 20px;
+        padding: 13px;
         font-size: 16px;
         cursor: pointer;
+        border-radius: 56px;
+      }
+      #buttonContainer {
+        display: flex;
+        gap: 10px;
+        height: 150px; 
+        margin-bottom: 25px;
+        margin-top: 20px;
+      }
+
+      #myspace {
+        padding: 10px;
+        font-size: 16px;
+      }
+      #openSpotify,
+      #openYoutube,
+      #openGmail {
+        border: 3px solid #cedf9f;
+        background: #181818;
+        color: #CEDF9F;
       }
     </style>
   </head>
   <body>
-    <h2>Open Spotify</h2>
+    <h2>Welcome! To My Space.</h2>
+    <div id="buttonContainer">
+      <button id="myspace">My space 1</button>
+      <button id="myspace2">My space 2</button>
+      <button id="myspace3">My space 3</button>
+    </div>
+
     <button id="openSpotify">Open Spotify</button>
+    <button id="openYoutube">Open Youtube</button>
+    <button id="openGmail">Open Gmail</button>
     <script src="popup.js"></script>
   </body>
 </html>
