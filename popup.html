@@ -6,7 +6,7 @@
     <title>Space Search</title>
     <style>
       body {
-        width: 325px;
+        width: 300px;
         text-align: center;
         padding: 20px;
         background-color: #1c1c1c;
@@ -28,7 +28,7 @@
       .search-bar input {
         width: 115%;
         padding: 10px;
-        font-size: 21px;
+        font-size: 17px;
         font-weight: 400;
         border-radius: 25px;
         border: none;
@@ -106,6 +106,18 @@
         cursor: pointer;
         border-radius: 56px;
       }
+      #user {
+        border: none;
+        background-color: transparent;
+        border-radius: 50%; 
+        cursor: pointer;
+        padding: 10px; 
+        transition: background-color 0.3s, transform 0.3s; 
+      }
+      #user:hover {
+        background-color: rgba(0, 0, 0, 0.1); 
+        transform: scale(1.1); 
+      }
       .header {
         position: relative;
         display: flex;
@@ -117,33 +129,16 @@
   <body>
     <div class="header">
       <h2>My Space.</h2>
-      <button
-        style="border: none; background-color: transparent; border-radius: 100%"
-      >
+      <button id="user">
         <img
           src="Assets/user.png"
           alt="user"
           style="width: 35px; height: 35px"
         />
       </button>
-      <!-- <a href="index.html" style="text-decoration: none">
-        <button
-          style="
-            border: none;
-            background-color: transparent;
-            border-radius: 100%;
-          "
-        >
-          <img
-            src="Assets/user.png"
-            alt="user"
-            style="width: 30px; height: 30px"
-          />
-        </button>
-      </a> -->
     </div>
     <div class="search-bar">
-      <input type="text" placeholder="my space" />
+      <input type="text" placeholder="Search Your Space." />
     </div>
     <div class="space-list" id="spotify-list">
       <div class="space-item">
