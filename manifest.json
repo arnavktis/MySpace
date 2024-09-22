@@ -5,7 +5,7 @@
   "description": "Opens Spotify in a new tab on button click.",
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "elephant.png"
+    "default_icon": "Assets/elephant.png"
   },
   "permissions": ["tabs"]
 }

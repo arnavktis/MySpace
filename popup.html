@@ -1,56 +1,296 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Spotify Opener</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Search</title>
     <style>
       body {
+        width: 325px;
         text-align: center;
         padding: 20px;
         background-color: #1c1c1c;
-        border-radius: 10%;
+        border-radius: 11px;
+        font-family: "Arial", sans-serif;
       }
       h2 {
-        margin-bottom: 10px;
-        color: #CEDF9F;
+        margin-bottom: 20px;
+        color: #fff;
+        font-family: Afacad;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: -1.56px;
       }
-      button {
+      .search-bar {
+        display: flex;
+      }
+      .search-bar input {
+        width: 115%;
+        padding: 10px;
+        font-size: 21px;
+        font-weight: 400;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        background-color: #2c2c2c;
+        color: #fff;
+      }
+      .space-list,
+      .spotify-list {
+        margin-top: 10px;
+      }
+      .space-item {
+        display: flex;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 15px;
+        color: #fff;
+      }
+      .spotify-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        border-radius: 15px;
+        color: #fff;
+      }
+      .space-item img {
+        border-radius: 20%;
+        width: 30px;
+        height: 30px;
+      }
+      .spotify-item img {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+      }
+      .space-item div {
+        display: flex;
+        align-items: center;
+      }
+      .spotify-item div {
+        display: flex;
+        align-items: center;
+      }
+      .space-item span,
+      .spotify-item span {
+        margin-left: 15px;
+      }
+      .space-item button {
+        border: none;
+        background-color: transparent;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        color: #fff;
+      }
+      .spotify-item button {
+        border: none;
+        background-color: #3c3c3c;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        color: #fff;
+      }
+      .spotify-item button {
+        border-radius: 20px;
+        padding: 5px 15px;
+        background-color: #424242;
+      }
+      .button {
         padding: 13px;
         font-size: 16px;
         cursor: pointer;
         border-radius: 56px;
       }
-      #buttonContainer {
+      .header {
+        position: relative;
         display: flex;
-        gap: 10px;
-        height: 150px; 
-        margin-bottom: 25px;
-        margin-top: 20px;
-      }
-
-      #myspace {
-        padding: 10px;
-        font-size: 16px;
-      }
-      #openSpotify,
-      #openYoutube,
-      #openGmail {
-        border: 3px solid #cedf9f;
-        background: #181818;
-        color: #CEDF9F;
+        left: 50px;
+        justify-content: space-evenly;
       }
     </style>
   </head>
   <body>
-    <h2>Welcome! To My Space.</h2>
-    <div id="buttonContainer">
-      <button id="myspace">My space 1</button>
-      <button id="myspace2">My space 2</button>
-      <button id="myspace3">My space 3</button>
+    <div class="header">
+      <h2>My Space.</h2>
+      <button
+        style="border: none; background-color: transparent; border-radius: 100%"
+      >
+        <img
+          src="Assets/user.png"
+          alt="user"
+          style="width: 35px; height: 35px"
+        />
+      </button>
+      <!-- <a href="index.html" style="text-decoration: none">
+        <button
+          style="
+            border: none;
+            background-color: transparent;
+            border-radius: 100%;
+          "
+        >
+          <img
+            src="Assets/user.png"
+            alt="user"
+            style="width: 30px; height: 30px"
+          />
+        </button>
+      </a> -->
     </div>
+    <div class="search-bar">
+      <input type="text" placeholder="my space" />
+    </div>
+    <div class="space-list" id="spotify-list">
+      <div class="space-item">
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 20 20"
+            fill="none"
+          >
+            <rect width="20" height="20" rx="5" fill="#353535" />
+            <circle
+              cx="9.99772"
+              cy="10.0003"
+              r="6.66667"
+              fill="url(#paint0_linear_975_11)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_975_11"
+                x1="9.99772"
+                y1="3.33362"
+                x2="9.99772"
+                y2="16.667"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#488FE5" />
+                <stop offset="1" stop-color="#CB43C0" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <span>my space 1</span>
+        </div>
+        <button type="button" id="myspace">
+          <img
+            src="Assets/button.png"
+            alt="Arrow"
+            style="width: 20px; height: 20px"
+          />
+        </button>
+      </div>
+      <div class="space-item">
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 20 20"
+            fill="none"
+          >
+            <rect width="20" height="20" rx="5" fill="#353535" />
+            <circle
+              cx="9.99772"
+              cy="10.0003"
+              r="6.66667"
+              fill="url(#paint0_linear_975_21)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_975_21"
+                x1="9.99772"
+                y1="3.33362"
+                x2="9.99772"
+                y2="16.667"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#48E577" />
+                <stop offset="1" stop-color="#4397CB" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <span>my space 2</span>
+        </div>
+        <button type="button" id="myspace2">
+          <img
+            src="Assets/button.png"
+            alt="Arrow"
+            style="width: 20px; height: 20px"
+          />
+        </button>
+      </div>
+      <div class="space-item">
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 20 20"
+            fill="none"
+          >
+            <rect width="20" height="20" rx="5" fill="#353535" />
+            <circle cx="10" cy="10" r="6.66667" fill="url(#paint3_linear)" />
+            <defs>
+              <linearGradient
+                id="paint3_linear"
+                x1="10"
+                y1="3.33362"
+                x2="10"
+                y2="16.667"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#0072FF" />
+                <stop offset="1" stop-color="#00C6FF" />
+              </linearGradient>
+            </defs>
+          </svg>
 
-    <button id="openSpotify">Open Spotify</button>
-    <button id="openYoutube">Open Youtube</button>
-    <button id="openGmail">Open Gmail</button>
+          <span>my space 3</span>
+        </div>
+        <button type="button" id="myspace3">
+          <img
+            src="Assets/button.png"
+            alt="Arrow"
+            style="width: 20px; height: 20px"
+          />
+        </button>
+      </div>
+    </div>
+    <hr style="border: 0.5px solid #555; margin: 2px 4px" />
+    <div class="spotify-list" , id="link-list">
+      <div class="spotify-item">
+        <div>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/174/174872.png"
+            alt="Spotify icon"
+            width="40"
+          />
+          <span>Open Spotify</span>
+        </div>
+        <button type="button" id="openSpotify">open</button>
+      </div>
+      <div class="spotify-item">
+        <div>
+          <img src="Assets/youtube.png" alt="Spotify icon" width="40" />
+          <span>Open Youtube</span>
+        </div>
+        <button id="openYoutube">open</button>
+      </div>
+      <div class="spotify-item">
+        <div>
+          <img src="Assets/gmail.png" alt="Spotify icon" width="40" />
+          <span>Open Gmail</span>
+        </div>
+        <button id="openGmail">open</button>
+      </div>
+    </div>
     <script src="popup.js"></script>
   </body>
 </html>
