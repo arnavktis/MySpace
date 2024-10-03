@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,6 +19,48 @@
             <input class = "px-5 py-2 rounded-lg border-zinc-500 border-2 bg-transparent" type="text" name = "Myspacename" placeholder="Myspacename">
             <input class = "px-5 py-2 rounded-lg border-zinc-500 border-2 bg-transparent" type="text" name = "image" placeholder="image url">
             <input class = "px-5 py-2 bg-blue-500 rounded-lg ml-3" type = "submit" value ="Create user">
+        </form>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+    <link rel="stylesheet" href ="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full h-full bg-zinc-900 p-10 text-white">
+        <!-- Navigation Link to Read Users -->
+        <div class="nav text-xl text-blue-500 mb-10">
+            <a href="/read">Read Users</a>
+        </div>
+        <!-- Create User Form -->
+        <h1 class="text-3xl tracking-tighter mb-3">Create User</h1>
+        <form action="/create" method="POST">
+            <!-- Input for User Name -->
+            <input class="px-5 py-2 rounded-lg border-zinc-500 border-2 bg-transparent mb-3" 
+                   type="text" name="name" placeholder="Name" required>
+
+            <!-- Input for User Email -->
+            <input class="px-5 py-2 rounded-lg border-zinc-500 border-2 bg-transparent mb-3" 
+                   type="email" name="email" placeholder="Email" required>
+
+            <!-- Input for Space Name (Optional) -->
+            <input class="px-5 py-2 rounded-lg border-zinc-500 border-2 bg-transparent mb-3" 
+                   type="text" name="Myspacename" placeholder="Space Name (Optional)">
+
+            <!-- Input for Image URL -->
+            <input class="px-5 py-2 rounded-lg border-zinc-500 border-2 bg-transparent mb-3" 
+                   type="url" name="image" placeholder="Image URL (Optional)">
+
+            <!-- Submit Button -->
+            <input class="px-5 py-2 bg-blue-500 rounded-lg ml-3 cursor-pointer" 
+                   type="submit" value="Create User">
         </form>
     </div>
 </body>

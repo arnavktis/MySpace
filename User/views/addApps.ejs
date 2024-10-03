@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New App</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full h-full bg-zinc-900 p-10 text-white">
+        <h1 class="text-3xl tracking-tighter mb-3">Add a New App</h1>
+        <form action="/add-app" method="POST">
+            <input class="px-5 py-2 rounded-lg border-zinc-500 border-2 bg-transparent" type="text" name="name" placeholder="App Name" required>
+            <input class="px-5 py-2 rounded-lg border-zinc-500 border-2 bg-transparent" type="text" name="profileURL" placeholder="Profile URL" required>
+            <input class="px-5 py-2 rounded-lg border-zinc-500 border-2 bg-transparent" type="text" name="redirectURL" placeholder="Redirect URL" required>
+            <input class="px-5 py-2 bg-blue-500 rounded-lg ml-3" type="submit" value="Add App">
+        </form>
+    </div>
+</body>
+</html>
