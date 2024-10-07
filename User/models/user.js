@@ -16,7 +16,7 @@ const userSchema = mongoose.Schema({
     image: String,          // User profile image
     email: String,          // User email
     name: String,           // User name
-    spaces: [spaceSchema],  // Array of spaces created by the user
+    spaces: [spaceSchema],  
 });
 
 module.exports = mongoose.model('User', userSchema);

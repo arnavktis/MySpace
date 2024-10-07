@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Spaces</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="w-full h-full bg-zinc-900 p-10 text-white">
+      <div class="nav text-xl text-blue-500 mb-10">
+        <a href="/">Back to home</a>
+      </div>
+
+      <div class="flex items-center mb-3">
+        <h1 class="text-3xl tracking-tighter mb-3">
+          Spaces for <%= user.name %>
+        </h1>
+        <a href="/spaces/<%= user._id %>" class="ml-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-plus-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm1 7h4a1 1 0 0 1 0 2H9v4a1 1 0 0 1-2 0V9H4a1 1 0 0 1 0-2h4V4a1 1 0 0 1 2 0v3z"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Flex container to align spaces in a row -->
+      <div class="flex gap-6 flex-wrap">
+        <% user.spaces.forEach(function(space) { %>
+        <div class="space w-72 p-10 bg-zinc-800 rounded-lg">
+          <h3 class="text-2xl tracking-tighter"><%= space.name %></h3>
+
+          <!-- Flex container for icons and app names in a row -->
+          <ul class="flex flex-row flex-wrap mb-5 gap-3">
+            <% space.apps.forEach(app => { const appDetails = appMap[app._id];
+            if (appDetails) { %>
+            <li class="flex items-center">
+              <!-- Redirect applied only to the logo (app icon) -->
+              <a
+                href="<%= appDetails.redirectURL %>"
+                target="_blank"
+                class="mr-3"
+              >
+                <img
+                  src="<%= appDetails.profileURL %>"
+                  alt="<%= appDetails.name %> icon"
+                  width="50"
+                  height="50"
+                  class="rounded-full"
+                />
+              </a>
+              <span class="text-white"><%= appDetails.name %></span>
+            </li>
+            <% } }); %>
+          </ul>
+
+          <form
+            action="/select-apps/<%= user._id %>/<%= space._id %>"
+            method="GET"
+          >
+            <button
+              type="submit"
+              class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded"
+            >
+              Add Apps to this Space
+            </button>
+          </form>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>

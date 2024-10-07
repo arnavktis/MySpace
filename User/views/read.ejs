@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,6 +25,46 @@
                     <div class="flex gap-3 mt-10">
                         <a class="text-zinc-500" href="/edit/<%= user._id%>">Edit user</a>
                         <a class="text-red-400" href="/delete/<%= user._id %>">Delete user</a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full h-full bg-zinc-900 p-10 text-white">
+        <div class="nav text-xl text-blue-500 mb-10">
+            <a href="/">Back to home</a>
+        </div>
+        <h1 class="text-3xl tracking-tighter mb-3">All Users</h1>
+        <div class="flex gap-3 flex-wrap">
+            <% users.forEach(function(user) { %>
+                <div class="user w-72 p-10 bg-zinc-800 rounded-lg">
+                    <div class="w-full h-52 rounded-lg bg-red-500 overflow-hidden">
+                        <img class="w-full h-full object-cover object-top" src="<%= user.image %>" alt="">
+                    </div>
+                    <h3 class="text-2xl tracking-tighter mt-3"><%= user.name %></h3>
+                    <h5 class=""><%= user.email %></h5>
+                    <div class="flex gap-3 mt-10">
+                        <a class="text-zinc-500" href="/edit/<%= user._id %>">Edit user</a>
+                        <a class="text-red-400" href="/delete/<%= user._id %>">Delete user</a>
+                        <!-- Eye button to view user spaces -->
+                        <a class="text-blue-400" href="/view-spaces/<%= user._id %>" title="View user spaces">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3C8.686 3 5.735 5.235 4.073 8.084a10.017 10.017 0 000 7.832C5.735 18.765 8.686 21 12 21s6.265-2.235 7.927-5.084a10.017 10.017 0 000-7.832C18.265 5.235 15.314 3 12 3zM12 15a3 3 0 100-6 3 3 0 000 6z" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
             <% }) %>

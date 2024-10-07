@@ -15,7 +15,8 @@
                 <% apps.forEach(app => { %>
                     <div class="mb-3">
                         <label class="flex items-center">
-                            <input type="checkbox" name="selectedApps" value="<%= app._id %>" class="mr-2">
+                            <!-- <input type="checkbox" name="selectedApps" value="<%= app._id %>" class="mr-2"> -->
+                            <input type="checkbox" name="selectedApps[]" value="<%= app._id %>" class="mr-2">
                             <span><%= app.name %></span>
                         </label>
                     </div>
