@@ -82,42 +82,6 @@ app.post("/create", async (req, res) => {
   }
 });
 
-// app.get("/spaces/:userid", async (req, res) => {
-//   try {
-//     const user = await userModel.findById(req.params.userid);
-//     if (user) {
-//       // Send the user's spaces array as a response
-//       res.status(200).json(user.spaces);
-//     } else {
-//       res.status(404).send("User not found");
-//     }
-//   } catch (error) {
-//     console.error("Error retrieving spaces:", error);
-//     res.status(500).send("Error retrieving spaces");
-//   }
-// });
-
-// // Route to create a new space for a user
-// app.post("/create-space/:userid", async (req, res) => {
-//   const { Myspacename } = req.body;
-
-//   try {
-//     const user = await userModel.findById(req.params.userid);
-//     if (user) {
-//       // Add the new space to the user's spaces array
-//       user.spaces.push({ name: Myspacename, apps: [] });
-//       await user.save();
-//       console.log("Space created:", user);
-//       res.redirect("/read");
-//     } else {
-//       res.status(404).send("User not found");
-//     }
-//   } catch (error) {
-//     console.error("Error creating space:", error);
-//     res.status(500).send("Error creating space");
-//   }
-// });
-
 app.get("/spaces/:userid", async (req, res) => {
   try {
     const user = await userModel.findById(req.params.userid);
